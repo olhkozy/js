@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie domowe</title>
+
+    <style>
+        .cont{
+        display: flex;
+        flex-wrap: wrap;
+        }
+        button{
+        margin: 10px;    
+        border-radius: 30px;
+        width: 400px;
+        height: 300px;
+        flex-grow: 1;
+        flex-basis: 200;
+        }
+    </style>    
+</head>
+<body>
+
+    <h1>praca domowa</h1>
+
+    <div class="cont">
+    <button onclick="openPopupWindow()">Otwórz YouTube w okienku</button>
+    <button onclick="openNewTab()">Otwórz ZSE w nowej zakładce</button>
+    <button onclick="showAlerts()">Uruchom alert</button>
+</div>
+    <script>
+        //funkcja otwierająca Youtube w nowym oknie
+        function openPopupWindow() {
+            window.open("https://www.youtube.com", "okienko", "toolbar=no,directories=no,menubar=no,height=380,width=640,top=200,left=200"); //otwiera Youtube w tym nowym oknie
+        }
+        //to już jest funkcja otwirająca stronę szkoły w nowej zakładce
+        function openNewTab() {
+            window.open("https://zse.edu.gdansk.pl/pl", "_blank"); //otwiera stronę w nowej zakładce
+        }
+        //a to jest funkcja wyświetlająca okna dialogowe alert.
+        function showAlerts() {
+            alert("To jest alert!");//wyświetla okno alert z prośbą o potwierdzenie akcji. 
+
+            const userName = prompt("Jak masz na imię?"); //prosi użytkownika o wpisanie imnienia. 
+            if (userName) {
+                const confirmContinue = confirm(`Czy na pewno chcesz kontynuować, ${userName}?`); //pyta czy użytkownik chce kontynuować.
+                if (confirmContinue) {
+                    alert(`Witaj, ${userName}! Miło Cię widzieć.`);
+                } else {
+                    alert("Zatrzymano operację.");
+                }
+            } else {
+                alert("Nie podano imienia... :("); 
+            }
+        }
+
+        //Olha Kozyr 3F
+    </script>
+</body>
+</html>
+
